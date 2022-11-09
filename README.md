@@ -8,4 +8,10 @@
 - Regular - <kbd>1</kbd>
 - Toon Shader - <kbd>2</kbd>
 - Glow Shader - <kbd>3</kbd>
-- Pink Jelly Shader - <kbd>4</kbd>
+- Pink Jelly Shader - <kbd>4</kbd>  
+## Modelos:  
+- Modelo 1 - <kbd>LSHIFT</kbd>+<kbd>1</kbd>
+- Modelo 2 - <kbd>LSHIFT</kbd>+<kbd>2</kbd>
+- Modelo 3 - <kbd>LSHIFT</kbd>+<kbd>3</kbd>
+- Modelo 4 - <kbd>LSHIFT</kbd>+<kbd>4</kbd>
+- Modelo 5 - <kbd>LSHIFT</kbd>+<kbd>5</kbd>
