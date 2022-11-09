@@ -6,6 +6,6 @@
 - <kbd>Z</kbd> para utilizar el modo normal de renderizado y X para utilizar el modo wireframe  
 ## Shaders:  
 - Regular - <kbd>1</kbd>
-- Toon Shader - <kbd>Tecla 2</kbd>
-- Glow Shader - <kbd>Tecla 3</kbd>
-- Pink Jelly Shader - <kbd>Tecla 4</kbd>
+- Toon Shader - <kbd>2</kbd>
+- Glow Shader - <kbd>3</kbd>
+- Pink Jelly Shader - <kbd>4</kbd>
