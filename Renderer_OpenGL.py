@@ -49,6 +49,7 @@ mario = mixer.Sound("mario.mp3")
 stormtrooper = mixer.Sound("stormtrooper.mp3")
 limit = mixer.Sound("limit.mp3")
 limit.set_volume(0.1)
+mousepos = 0
 
 while isRunning:
     keys = pygame.key.get_pressed()
@@ -66,6 +67,57 @@ while isRunning:
             elif event.key == pygame.K_x:
                 rend.wireframeMode()
             
+            elif event.key == pygame.K_LCTRL:
+                mousepos = pygame.mouse.get_pos()
+            
+        elif event.type == pygame.MOUSEWHEEL:
+            if event.y == 1:
+                if zoomCounter <= 80:
+                    rend.camPosition.z -= 30 * deltaTime
+                    zoomCounter += 3
+                else:
+                    limit.play()
+            elif event.y == -1:
+                if zoomCounter > 0:
+                    rend.camPosition.z += 30*deltaTime
+                    zoomCounter -= 3
+                else:
+                    limit.play()
+        
+        elif event.type == pygame.MOUSEMOTION:
+            # print(pygame.mouse.get_pos())
+            # mousepos = pygame.mouse.get_pos()
+            
+            if keys[K_LCTRL] and pygame.mouse.get_pos()[0] < mousepos[0]:
+                if horiCounter > 0:
+                    rend.camPosition.x -= 20 * deltaTime
+                    horiCounter -= 8
+                else:
+                    limit.play()
+
+            elif keys[K_LCTRL] and pygame.mouse.get_pos()[0] > mousepos[0]:
+                if horiCounter <= 400:
+                    rend.camPosition.x += 20 * deltaTime
+                    horiCounter += 8
+                else:
+                    limit.play()
+            
+            if keys[K_LCTRL] and pygame.mouse.get_pos()[1] < mousepos[1]:
+                if vertCounter <= 400:
+                    rend.camPosition.y += 20 * deltaTime
+                    vertCounter += 6
+                else:
+                    limit.play()
+
+            elif keys[K_LCTRL] and pygame.mouse.get_pos()[1] > mousepos[1]:
+                if vertCounter > 0:
+                    rend.camPosition.y -= 20 * deltaTime
+                    vertCounter -= 6
+                else:
+                    limit.play()
+
+            # if(pygame.mouse.get_pos()[0] < mousepos[0]):
+
             # elif event.key == pygame.K_1: #Shader default
             #     rend.setShaders(vertex_shader, fragment_shader)
             
@@ -82,15 +134,15 @@ while isRunning:
 
     #General camera controls
     if keys[K_a]:
-        if vertCounter > 0:
+        if horiCounter > 0:
             rend.camPosition.x -= 10 * deltaTime
-            vertCounter -= 4
+            horiCounter -= 4
         else:
             limit.play()
     elif keys[K_d]:
-        if vertCounter <= 400:
+        if horiCounter <= 400:
             rend.camPosition.x += 10 * deltaTime
-            vertCounter += 4
+            horiCounter += 4
         else:
             limit.play()
 
