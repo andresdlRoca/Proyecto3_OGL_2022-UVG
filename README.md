@@ -4,6 +4,9 @@
 - Las flechas para mover la luz en la direccion correspondiente  
 - <kbd>E</kbd> para hacer Zoom In y Q para hacer Zoom Out  
 - <kbd>Z</kbd> para utilizar el modo normal de renderizado y X para utilizar el modo wireframe  
+- <kbd>MouseWheel</kbd> para hacer Zoom In y Zoom Out
+- <kbd>LCTRL</kbd> + <kbd>Movimiento de mouse</kbd> para mover la camara alrededor del modelo
+- <kbd>P</kbd> para pausar la musica de fondo
 ## Shaders:  
 - Regular - <kbd>1</kbd>
 - Toon Shader - <kbd>2</kbd>
