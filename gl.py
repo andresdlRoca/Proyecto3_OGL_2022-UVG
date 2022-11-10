@@ -178,6 +178,7 @@ class Renderer(object):
 
         self.value = 0
 
+        self.background = None
         self.target = glm.vec3(0,0,0)
         self.angle = 0
         self.camDistance = 5
