@@ -12,6 +12,7 @@
 - Toon Shader - <kbd>2</kbd>
 - Glow Shader - <kbd>3</kbd>
 - Pink Jelly Shader - <kbd>4</kbd>  
+- Pulse Shader - <kbd>5</kbd>
 ## Modelos:  
 - Modelo 1 - <kbd>LSHIFT</kbd>+<kbd>1</kbd>
 - Modelo 2 - <kbd>LSHIFT</kbd>+<kbd>2</kbd>
