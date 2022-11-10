@@ -7,6 +7,7 @@
 - <kbd>MouseWheel</kbd> para hacer Zoom In y Zoom Out
 - <kbd>LCTRL</kbd> + <kbd>Movimiento de mouse</kbd> para mover la camara alrededor del modelo
 - <kbd>P</kbd> para pausar la musica de fondo
+- <kbd>ESC</kbd> para cerrar el programa
 ## Shaders:  
 - Regular - <kbd>1</kbd>
 - Toon Shader - <kbd>2</kbd>
