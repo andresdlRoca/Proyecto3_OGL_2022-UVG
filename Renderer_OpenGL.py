@@ -40,6 +40,7 @@ pauseState = False
 mixer.music.load("backgroundsong.mp3")
 mixer.music.play(-1)
 mixer.music.set_volume(0.5)
+
 #Sound effects
 selectsfx = mixer.Sound("select.mp3")
 selectsfx.set_volume(0.2)
@@ -85,52 +86,34 @@ while isRunning:
                     limit.play()
         
         elif event.type == pygame.MOUSEMOTION:
-            # print(pygame.mouse.get_pos())
-            # mousepos = pygame.mouse.get_pos()
             
             if keys[K_LCTRL] and pygame.mouse.get_pos()[0] < mousepos[0]:
                 if horiCounter > 0:
-                    rend.camPosition.x -= 20 * deltaTime
-                    horiCounter -= 8
+                    rend.camPosition.x -= 10 * deltaTime
+                    horiCounter -= 4
                 else:
                     limit.play()
 
             elif keys[K_LCTRL] and pygame.mouse.get_pos()[0] > mousepos[0]:
                 if horiCounter <= 400:
-                    rend.camPosition.x += 20 * deltaTime
-                    horiCounter += 8
+                    rend.camPosition.x += 10 * deltaTime
+                    horiCounter += 4
                 else:
                     limit.play()
             
             if keys[K_LCTRL] and pygame.mouse.get_pos()[1] < mousepos[1]:
                 if vertCounter <= 400:
-                    rend.camPosition.y += 20 * deltaTime
-                    vertCounter += 6
+                    rend.camPosition.y += 10 * deltaTime
+                    vertCounter += 3
                 else:
                     limit.play()
 
             elif keys[K_LCTRL] and pygame.mouse.get_pos()[1] > mousepos[1]:
                 if vertCounter > 0:
-                    rend.camPosition.y -= 20 * deltaTime
-                    vertCounter -= 6
+                    rend.camPosition.y -= 10 * deltaTime
+                    vertCounter -= 3
                 else:
                     limit.play()
-
-            # if(pygame.mouse.get_pos()[0] < mousepos[0]):
-
-            # elif event.key == pygame.K_1: #Shader default
-            #     rend.setShaders(vertex_shader, fragment_shader)
-            
-            # elif event.key == pygame.K_2: #Toon Shader
-            #     rend.setShaders(vertex_shader, toon_shader)
-            
-            # elif event.key == pygame.K_3: #Glow Shader
-            #     rend.setShaders(vertex_shader, glow_shader)
-            
-            # elif event.key == pygame.K_4: #Pink Jelly
-            #     rend.setShaders(vertex_shader, pinkJelly_shader)
-            # elif event.key == pygame.K_5: #Pulsating shader
-            #     rend.setShaders(pulse_vertex_shader, pulse_fragment_shader)
 
     #General camera controls
     if keys[K_a]:
@@ -181,25 +164,6 @@ while isRunning:
         else:
             mixer.music.unpause()
             pauseState = False
-    
-    # if keys[K_f]: #Left circular
-    #     # if rend.camPosition.z >= -5.5 <=0:
-    #     #     rend.camPosition.z -= 10 * deltaTime
-    #     #     rend.camPosition.x -= 10 * deltaTime 
-    #     # elif rend.camPosition.z <= -5.5:
-    #     #     rend.camPosition.z -= 10 * deltaTime
-    #     #     rend.camPosition.x += 10*deltaTime
-        
-
-    # elif keys[K_g]: #Right circular
-
-    #     # if rend.camPosition.z >= -5.5 <= 0: 
-    #     #     rend.camPosition.z -= 10 * deltaTime
-    #     #     rend.camPosition.x += 10 * deltaTime
-    #     # elif rend.camPosition.z <= -5.5:
-    #     #     rend.camPosition.z += 10 * deltaTime
-    #     #     rend.camPosition.x += 10 * deltaTime    
-    #     print(rend.camPosition.x)
 
     #Light control
     if keys[K_LEFT]:
@@ -247,7 +211,6 @@ while isRunning:
         face.scale.z = 2
 
         rend.scene.append( face )
-        print("Modelo 1")
     
     elif keys[K_LSHIFT] and keys[K_2]:
         fallguy.play()
@@ -261,7 +224,6 @@ while isRunning:
         face.scale.z = 2
         rend.scene.clear()
         rend.scene.append( face )
-        print("Modelo 2")
 
     elif keys[K_LSHIFT] and keys[K_3]:
         seraphine.play()
@@ -275,7 +237,6 @@ while isRunning:
         face.scale.z = 0.05
 
         rend.scene.append( face )
-        print("Modelo 3")
 
     elif keys[K_LSHIFT] and keys[K_4]:
         mario.play()
@@ -290,7 +251,6 @@ while isRunning:
         face.scale.z = 1
 
         rend.scene.append( face )
-        print("Modelo 4")
 
     elif keys[K_LSHIFT] and keys[K_5]:
         stormtrooper.play()
@@ -305,11 +265,9 @@ while isRunning:
         face.scale.z = 2
 
         rend.scene.append( face )
-        print("Modelo 5")
 
     deltaTime = clock.tick(60) / 1000
     rend.time += deltaTime
-    #print(deltaTime)
 
     rend.update()
     rend.render()
